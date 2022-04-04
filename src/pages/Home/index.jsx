@@ -1,9 +1,10 @@
 import './index.scss'
 import '../../components/AnimatedLetters/index.scss'
-import LogoTitle from '../../assets/images/mylogo.png'
+import LogoTitle from '../../assets/images/eger_logo.svg'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import AnimatedLetters from '../../components/AnimatedLetters'
+import Logo from './Logo/index'
 
 function Home() {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -33,6 +34,7 @@ function Home() {
             <h2>Frontend Developer / JavaScript Expert</h2>
             <Link to='/contact' className='flat-button'>Contact Me</Link>
         </div>
+        <Logo />
     </div>
   )
 }
