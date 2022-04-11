@@ -3,6 +3,7 @@ import '../../components/AnimatedLetters/index.scss'
 import LogoTitle from '../../assets/images/eger_logo.svg'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Loader from 'react-loaders'
 import AnimatedLetters from '../../components/AnimatedLetters'
 import Logo from './Logo/index'
 
@@ -18,6 +19,7 @@ function Home() {
   }, [])
 
   return (
+    <>
     <div className='container home-page'>
         <div className="text-zone">
             <h1>
@@ -36,6 +38,8 @@ function Home() {
         </div>
         <Logo />
     </div>
+    <Loader type="pacman" />
+    </>
   )
 }
 
