@@ -46,7 +46,7 @@
       }
 
       &:hover {
-        color: #ac4aee;
+        color: #D45569;
 
         svg {
           opacity: 0;
@@ -82,6 +82,12 @@
         }
       }
 
+      &:nth-child(3) {
+        &::after {
+          content: 'Portfolio';
+        }
+      }
+
       &:last-child {
         &::after {
           content: 'Contact';
@@ -90,7 +96,7 @@
 
       &.active {
         svg {
-          color: #ac4aee;
+          color: #D45569;
         }
       }
     }
@@ -114,7 +120,7 @@
         line-height: 16px;
 
         &:hover svg {
-          color: #ac4aee;
+          color: #D45569;
         }
       }
     }

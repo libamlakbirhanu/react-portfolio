@@ -1,0 +1,138 @@
+.contact-form {
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-bottom: 10px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 2s 2s;
+      animation-fill-mode: forwards;
+    }
+
+    li:last-child {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .half-wrapper {
+      display: flex;
+      gap: 1rem;
+    }
+
+    li.half {
+      width: 50%;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    border: 0;
+    background-color: #173444;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+  }
+
+  textarea {
+    width: 100%;
+    border: 0;
+    background: #173444;
+    font-size: 16px;
+    color: white;
+    padding: 20px;
+    min-height: 150px;
+  }
+
+  .flat-button {
+    color: #D45569;
+    background: 0 0;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid #D45569;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+}
+
+.the-watchers {
+  position: absolute;
+  top: 50px;
+  right: 30%;
+  z-index: 999;
+  width: 267px;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s;
+  animation-fill-mode: forwards;
+
+  &::before {
+    content: "ASK AWAY CHILD";
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+    background: #2C252D;
+    width: 55px;
+    height: 60px;
+    top: 50%;
+    left: 14%;
+    border-radius: 2px;
+    transform: rotateZ(63deg);
+  }
+
+  .eye-hole {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  }
+
+  .eye {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .dark-eye {
+    width: 10px;
+    height: 10px;
+    background: #252120;
+    border-radius: 50%;
+  }
+
+  .eye-left {
+    top: 29%;
+    left: 45%;
+  }
+
+  .eye-right {
+    top: 33%;
+    left: 81%;
+  }
+
+  .dark-eye-left {
+    top: 26%;
+    right: -30%;
+  }
+
+  .dark-eye-right {
+    top: 26%;
+    right: -57%;
+  }
+}
