@@ -1,4 +1,4 @@
-$primary-color: #ac4aee;
+$primary-color: #D45569;
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
@@ -16,6 +16,11 @@ $primary-color: #ac4aee;
 @font-face {
   font-family: 'Coolvetica';
   src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
+}
+
+html,
+body {
+  box-sizing: border-box;
 }
 
 input,
