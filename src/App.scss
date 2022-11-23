@@ -41,3 +41,22 @@ textarea {
   animation: fadeOut 1s 1s;
   animation-fill-mode: forwards;
 }
+
+@media only screen and (max-width: 700px) {
+  body {
+    display: none !important;
+  }
+
+  html::after {
+    content: "Mobile view is currently under development";
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(247, 65, 65);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
