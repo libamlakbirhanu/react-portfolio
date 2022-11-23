@@ -1,0 +1,28 @@
+{
+  "portfolio": [
+    {
+      "cover": "/portfolio/tic.png",
+      "title": "tic tac toe",
+      "description": "typescript, tsx, react, tailwind",
+      "url": "https://t3-libe.vercel.app/"
+    },
+    {
+      "cover": "/portfolio/awash.png",
+      "title": "Awash bank complaint system",
+      "description": "vue, nuxt, graphql, vuetify",
+      "url": "https://awash.pfs.oddatech.com/"
+    },
+    {
+      "cover": "/portfolio/lmis.png",
+      "title": "Labor Market Information system",
+      "description": "react, nextjs, graphql, web-socket, tailwind, webpack, module-federation",
+      "url": "https://lmis.gov.et/"
+    },
+    {
+      "cover": "/portfolio/maids.png",
+      "title": "Hire maids",
+      "description": "mantine, react, jsx",
+      "url": "https://hiremaids.vercel.app/"
+    }
+  ]
+}

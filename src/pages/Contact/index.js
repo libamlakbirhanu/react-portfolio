@@ -95,7 +95,8 @@ function Contact() {
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="Send" />
+                  {/* <input type="submit" className="flat-button" value="Send" /> */}
+                  <p>will be available soon</p>
                 </li>
               </ul>
             </form>
