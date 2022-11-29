@@ -1,11 +1,15 @@
 import { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../../components/AnimatedLetters'
 import watchers from '../../assets/images/rickandmorty.png'
 import './index.scss'
+import toast from 'react-hot-toast'
 
 function Contact() {
+  const [loading, setLoading] = useState(false)
+  const form = useRef()
   const [letterClass, setLetterClass] = useState('text-animate')
   const anchor = document.getElementById('rickandmorty')
   const eyes = document.querySelectorAll('.eye-hole')
@@ -16,10 +20,36 @@ function Contact() {
     }, 3000)
   }, [])
 
+  const notifySuccess = () => toast('Email sent successfully.')
+  const notifyError = () => toast("Email couldn't be sent, please try again!")
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    setLoading(true)
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          setLoading(false)
+          notifySuccess()
+        },
+        (error) => {
+          setLoading(false)
+          notifyError()
+        }
+      )
+  }
+
   const handleMouseMove = (x, y) => {
-    const rekt = anchor.getBoundingClientRect()
-    const anchorX = rekt.left + rekt.width / 2
-    const anchorY = rekt.top + rekt.height / 2
+    const rekt = anchor?.getBoundingClientRect()
+    const anchorX = rekt?.left + rekt.width / 2
+    const anchorY = rekt?.top + rekt.height / 2
 
     const angleDeg = angle(x, y, anchorX, anchorY)
 
@@ -59,7 +89,7 @@ function Contact() {
             questions for me you can contact me using the form on this page
           </p>
           <div className="contact-form">
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <ul>
                 <div className="half-wrapper">
                   <li className="half">
@@ -95,8 +125,7 @@ function Contact() {
                   ></textarea>
                 </li>
                 <li>
-                  {/* <input type="submit" className="flat-button" value="Send" /> */}
-                  <p>will be available soon</p>
+                  <input type="submit" className="flat-button" value="Send" />
                 </li>
               </ul>
             </form>
@@ -118,6 +147,7 @@ function Contact() {
           <img src={watchers} alt="proximity watchers" id="rickandmorty" />
         </div>
       </div>
+      {loading && <Loader type="pacman" />}
       <Loader type="pacman" />
     </>
   )
