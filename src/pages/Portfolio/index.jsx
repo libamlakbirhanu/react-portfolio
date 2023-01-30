@@ -58,7 +58,7 @@ function Portfolio() {
         </h1>
         <div>{renderPortfolio()}</div>
       </div>
-      <Loader type="pacman" />
+      {/* <Loader type="pacman" /> */}
     </>
   )
 }
